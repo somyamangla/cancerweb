@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction Form</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/breast.css">
+    <script src="https://kit.fontawesome.com/c8b2778b34.js" crossorigin="anonymous"></script>
+   
+  
+</head>
+<body>
+ 
+    <header>
+      <nav class="bottom-bar">
+        <div class="logo">
+            <img src="/static/css/bg.jpg" alt="Logo" class="logoimg">
+        </div>
+        <ul class="bottom-bar__list">
+            <div class="bottom-bar__active-indicator"></div>
+            <li class="bottom-bar__link"><span class="material-symbols-outlined">
+              <a class="navLink" href="/getstarted"> <i class="fa-solid fa-house"></i>
+              </span>Home</a></li> 
+            <!-- <li class="bottom-bar__link"><span class="material-symbols-outlined">
+              <a class="navLink" href="/profile"><i class="fa fa-user"></i>
+              </span>Profile</a></li> -->
+            <li class="bottom-bar__link"><span class="material-symbols-outlined">
+              <a class="navLink" href="/doctor"><i class="fa fa-user-md"></i>
+              </span>Doctor</a></li>
+            <li class="bottom-bar__link"><span class="material-symbols-outlined">
+              <a class="navLink" href="/choice"><i class="fa fa-search"></i>
+              </span>Prediction</a></li>
+            <li class="bottom-bar__link"><span class="material-symbols-outlined">
+              <a class="navLink" href="/logout"><i class="fa fa-sign-out"></i>
+              </span>Sign Out</a></li>
+          </ul>
+   
+</nav>
+
+
+        <div class="bg-img">
+            <div class="box">
+             <h3>If you need info regarding any attributes click here</h3><br>
+              <a class="button" href="#popup1">CLICK ME</a>
+            </div>
+      
+           <div id="popup1" class="overlay">
+              <div class="popup">
+                <h2>Hello</h2>
+                    <a class="close" href="#">&times;</a>
+                      <div class="content">
+                        <b>Radius mean</b> - 0: lowest mean value of radius of the core tumor; 30: highest mean value of radius of the core tumor<br>
+                        <b>Perimeter mean</b> - 40: lowest mean value of the perimeter of tumor; 200: highest mean value of the perimeter of tumor<br>
+                        <b>Area mean</b> - 100:  lowest mean value of the area of core tumor; 2500:  highest mean value of the area of core tumor<br>
+                        <b>Concavity mean</b> -0: less severe tumor contour; 1: more severe tumor contour<br>
+                        <b>Concave points mean</b> - 0: less number of concave points on tumor; 1: maximum number of concave points on tumor<br>
+                        <b>Radius worst</b> - 0: lowest possible maximum value of the radius of the tumor; 40: highest possible maximum value of the radius of the tumor<br>
+                        <b>Perimeter worst</b> - 50: lowest possible maximum value of the perimeter of the tumor; 300: highest possible maximum value of the perimeter of the tumor<br>
+                        <b>Area worst</b> - 180: lowest possible maximum value of the area of the tumor; 4500: highest possible maximum value of the area of the tumor<br>
+                        <b>Concavity worst</b> - 0: lowest possible maximum value of the tumor contour; 2: highest possible maximum value of the tumor contour<br>
+                        <b>Concave points worst</b> - 0: lowest number of  maximum concave points on a tumor; 1: highest   number of  maximum concave points on a tumor<br>
+                      </div>
+                </div>
+           </div>
+      
+                <form action="/pred" method="POST" class="container">
+                    <h1>Breast Cancer Prediction Form</h1><br>
+                    
+              <Table Border="0">
+                <TR>
+                <TD>Radius mean</TD>
+                <TD><Input type="Text" Name="First Value" Placeholder="Values range : 0 - 30 (um)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Perimeter mean</TD>
+                <TD><Input type="Text" Name="Second Value" Placeholder="Values range : 40 - 200 (um)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Area mean</TD>
+                <TD><Input type="Text" Name="Third Value" Placeholder="Values range:100 - 2500(um2)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Concavity mean</TD>
+                <TD><Input type="Text" Name="Fourth Value" Placeholder="Values range : 0 - 1 (Fcc)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Concave Points mean</TD>
+                <TD><Input type="Text" Name="Fifth Value" Placeholder="Values range : 0 - 1 (Fcc)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Radius worst</TD>
+                <TD><Input type="Text" Name="Sixth Value" Placeholder="Values range : 0 - 40 (um)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Perimeter worst</TD>
+                <TD><Input type="Text" Name="Seventh Value" Placeholder="Values range : 50 - 300 (um)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Area worst</TD>
+                <TD><Input type="Text" Name="Eighth Value" Placeholder="Values range:180 - 4500(um2)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Concavity worst</TD>
+                <TD><Input type="Text" Name="Ninth Value" Placeholder="Values range : 0 - 2 (Fcc)" Required="Required"></TD>
+                </TR>
+                <TR>
+                <TD>Concave Points worst</TD>
+                <TD><Input type="Text" Name="Tenth Value" Placeholder="Values range : 0 - 1(Fcc)" Required="Required"></TD>
+                </TR>
+              </Table>
+              
+              <Button type="submit" Class="btn">PREDICT</Button>     
+              {{ prediction_text }} 
+            </form>
+</div>
+
+</header>
+</body>
+</html>
